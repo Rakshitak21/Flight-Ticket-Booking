@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: flight-ticket-booking
+    runtime: python
+    runtimeVersion: 3.11
+    buildCommand: sh build.sh
+    startCommand: gunicorn capstone.wsgi:application
+    envVars:
+      - key: DEBUG
+        value: "False"
+      - key: PYTHON_VERSION
+        value: 3.11.4
