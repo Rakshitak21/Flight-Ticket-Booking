@@ -27,7 +27,8 @@ SECRET_KEY = config('SECRET_KEY', default='=k3z-^1ov_hy5y%ebw(2e-npk@$#!(c8ix=+7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=lambda v: [s.strip() for s in v.split(',')])
+# For Render deployment - allow all hosts
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
