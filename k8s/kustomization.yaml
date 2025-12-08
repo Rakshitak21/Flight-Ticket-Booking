@@ -1,0 +1,23 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: flight-app
+
+namespace: flight-app
+
+resources:
+- deployment.yaml
+- service.yaml
+
+commonLabels:
+  app: flight-app
+  version: v1
+
+commonAnnotations:
+  owner: "flight-booking-team"
+  project: "flight-ticket-booking"
+
+images:
+- name: flight-app
+  newName: flight-app  # Replace with your registry: your-registry/flight-app
+  newTag: "latest"
