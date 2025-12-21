@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flight-booking-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flight-booking
+  template:
+    metadata:
+      labels:
+        app: flight-booking
+    spec:
+      containers:
+      - name: flight-booking
+        image: flight-booking
+        ports:
+        - containerPort: 8000
+      volumes:
+      - name: sqlite-storage
+        persistentVolumeClaim:
+          claimName: sqlite-pvc
