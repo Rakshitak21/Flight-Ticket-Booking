@@ -7,7 +7,7 @@ scrape_configs:
     static_configs:
       - targets: ['web:8000']
 
-  - job_name: 'cadvisor'
+  - job_name: 'node-exporter'
     static_configs:
-      - targets: ['cadvisor:8080']
+      - targets: ['node-exporter:9100']
   

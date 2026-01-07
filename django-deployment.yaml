@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: flight-booking
-        image: flight-booking
+        image: flight-booking:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8000
       volumes:

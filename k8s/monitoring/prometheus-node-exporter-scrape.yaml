@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  labels:
+    app: prometheus
+  namespace: default
+# This configmap should be merged into your main prometheus config if you have one
+# Here is just the scrape config for node-exporter
+# Add this under 'scrape_configs:' in your prometheus.yml:
+#
+#  - job_name: 'node-exporter'
+#    static_configs:
+#      - targets: ['node-exporter:9100']
